@@ -57,14 +57,13 @@ generateBtn.addEventListener("click", (e) => {
     return acc;
   }, []);
   if (options.length === 0) {
-    console.log("jestem");
     document.querySelector(".alert").style.display = "block";
     setTimeout(() => {
       document.querySelector(".alert").style.display = "none";
     }, 2000);
     return;
   }
-  console.log(options);
+
   const numbers = "01234567890";
   const letters = "ABCDEFGHIJKLMNOPRSTUWXZQ";
   const minLetters = "abcdefghijklmnoperstuwyqzxv";
@@ -94,7 +93,6 @@ generateBtn.addEventListener("click", (e) => {
 });
 // copy to clipboard
 copyIcon.addEventListener("click", (e) => {
-  console.log(fieldText.innerText);
   navigator.clipboard.writeText(fieldText.innerText);
   document.getElementById("copyMsg").style.display = "block";
   setTimeout(() => {
