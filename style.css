@@ -1,0 +1,248 @@
+:root {
+  /* colors */
+  --clr-darkGrey: hsl(248 10% 15%);
+  --clr-grey: hsl(0, 2%, 62%);
+  --clr-almostWhite: hsl(252 11% 91%);
+  --clr-verydarkGrey: hsl(248 15% 11%);
+  --clr-neonGreen: hsl(127 100% 82%);
+  --clr-orange: hsl(13 95% 66%);
+  --clr-red: hsl(0 91% 63%);
+  --clr-yellow: 42 91% 68%;
+  /* font sizes */
+  --fs-1: 1.5rem;
+  --fs-2: 1.125rem;
+  --fs-3: 1rem;
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 35rem) {
+  :root {
+    --fs-1: 2rem;
+    --fs-2: 1.5rem;
+    --fs-3: 1.125rem;
+  }
+}
+
+body {
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: var(--fs-3);
+  font-weight: 700;
+  color: var(--clr-almostWhite);
+  background-color: var(--clr-verydarkGrey);
+  overflow: hidden;
+  min-height: 100vh;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* inherit all font properties */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.flex {
+  display: flex;
+}
+.bg-green {
+  background-color: var(--clr-neonGreen);
+}
+.bg-dark {
+  background-color: var(--clr-darkGrey);
+}
+.bg-red {
+  background-color: var(--clr-red);
+}
+.text-green {
+  color: var(--clr-neonGreen);
+}
+.text-grey {
+  color: var(--clr-grey);
+}
+.text-red {
+  color: var(--clr-red);
+}
+/* typografy */
+.uppercase {
+  text-transform: uppercase;
+}
+.fs-1 {
+  font-size: var(--fs-1);
+  line-height: 2rem;
+}
+.fs-2 {
+  font-size: var(--fs-2);
+  line-height: 1.485rem;
+}
+.fs-3 {
+  font-size: var(--fs-3);
+  line-height: 1.485rem;
+}
+.main {
+  margin-top: 4rem;
+  margin-inline: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .main {
+    max-width: 33.75rem;
+    margin-top: 3.3125;
+    margin-inline: auto;
+  }
+}
+.title {
+  text-align: center;
+  margin-block: 0;
+  margin-bottom: 1rem;
+}
+.field {
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 35em) {
+  .field {
+    padding: 1.5rem 2rem;
+  }
+}
+.copy {
+  gap: 1rem;
+  align-items: center;
+}
+#copyMsg {
+  display: none;
+}
+.copyIcon:hover {
+  cursor: pointer;
+}
+.copyIcon:hover .copyIconPath {
+  fill: white;
+}
+.options {
+  padding: 1rem;
+}
+.sliderLabel {
+  align-items: center;
+  justify-content: space-between;
+}
+/* input type range styling */
+.slider {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  background: var(--clr-verydarkGrey);
+  accent-color: white;
+  cursor: pointer;
+  height: 8px;
+  background-image: linear-gradient(var(--clr-neonGreen), var(--clr-neonGreen));
+  background-size: 30% 100%;
+  background-repeat: no-repeat;
+}
+input[type="range"]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  background: var(--clr-almostWhite);
+  -webkit-appearance: none;
+  border-radius: 14px;
+}
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: var(--clr-verydarkGrey);
+  border: 2px solid var(--clr-neonGreen);
+  -webkit-appearance: none;
+}
+/* end of input type range styling */
+.checkboxes {
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.checkboxLabel {
+  display: block;
+  position: relative;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+/* hide default input */
+.checkboxLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+/* create custom input */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--clr-darkGrey);
+  border: 2px solid var(--clr-almostWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strength {
+  background-color: var(--clr-verydarkGrey);
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.strengthLvl {
+  align-items: center;
+}
+.strengthLvl p {
+  margin-right: 0.5rem;
+}
+.bars {
+  width: 10px;
+  height: 28px;
+  border: 2px solid var(--clr-almostWhite);
+  margin-left: 0.5rem;
+}
+.button {
+  width: 100%;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  border: 2px solid var(--clr-neonGreen);
+}
+.button:hover {
+  background-color: var(--clr-darkGrey);
+  cursor: pointer;
+  color: var(--clr-neonGreen);
+}
+.button:hover svg {
+  fill: var(--clr-neonGreen);
+}
+.toWeak {
+  background-color: red;
+}
+.medium {
+  background-color: yellow;
+}
+.strong {
+  background-color: green;
+}
+.alert {
+  text-align: center;
+  margin-block: 2rem;
+  color: var(--clr-red);
+  display: none;
+}
